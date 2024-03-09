@@ -1,0 +1,68 @@
+''' Classic - Rock Paper Scissor Game done fully in Python '''
+# Testing to study GitHub
+# The program was coded before I took my classes on Object-Oriented Programming, thus it makes use of basic Python coding concepts.
+
+n = int(input("Enter Max Point: ")) # Asking the user the maximum score point to play the game with.
+
+def Rock_Paper(n):     # Defining a function that runs the game. 
+    import random as r
+    aicount = 0
+    playercount = 0
+    print(f"***ROCK, PAPER, SCISSOR ({n}-pointer)***")
+    name = input("Enter player name: ")
+
+# The random module is used to generate random numbers ( 0 to 3 - all inclusive), Each number is assigned a game choice (Rock, Paper, Scissor)
+# This is done so that the computer / AI can play against the player / user.
+
+    while True:        
+        ai = r.randint(1, 3)
+        game = input("Enter game choice: ")
+
+        if ai == 1:
+            ai = "rock"
+            print(f'player:{game} vs AI:{ai}')
+            if game.lower() == 'paper':
+                playercount += 1
+            elif game.lower() == 'scissor':
+                aicount += 1
+            elif game.lower == ai:
+                aicount += 0
+                playercount += 0
+            print(f'Score: {playercount} - {aicount}')
+            print('\n')
+
+        elif ai == 2:
+            ai = "paper"
+            print(f'player:{game} vs AI:{ai}')
+            if game.lower() == 'scissor':
+                playercount += 1
+            elif game.lower() == 'rock':
+                aicount += 1
+            elif game.lower == ai:
+                aicount += 0
+                playercount += 0
+            print(f'Score: {playercount} - {aicount}')
+            print('\n')
+
+        elif ai == 3:
+            ai = "scissor"
+            print(f'player:{game} vs AI:{ai}')
+            if game.lower() == 'rock':
+                playercount += 1
+            elif game.lower() == 'paper':
+                aicount += 1
+            elif game.lower == ai:
+                aicount += 0
+                playercount += 0
+            print(f'Score: {playercount} - {aicount}')
+            print('\n')
+
+        if playercount >= n:
+            print(f"{name} won the match\nScore: {playercount} - {aicount}")
+            break
+
+        elif aicount >= n:
+            print(f"AI won the match\nScore: {playercount} - {aicount}")
+            break
+
+# The game ends when either the computer / AI or the user / player earns the maximum score points input in the beginning of the program.
